@@ -1,0 +1,29 @@
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="navbar">
+            <%= link_to "Albumizr", root_path, class: "brand" %>
+            <p class="navbar-text pull-left">Don't worry, Albumizr takes care.</p>
+
+          <% if signed_in? %>
+            <%= form_tag albums_path, method: 'get', class: "navbar-form pull-right" do |f| %>
+              <%= text_field_tag :search, params[:search],
+                placeholder: "Album title", class: "span2" %>
+              <%= submit_tag "Find", :name => nil, class: 'btn' %>
+            <% end %>
+          <% end %>
+
+            <ul class="nav pull-right">
+              <% if signed_in? %>
+                <li><%= link_to "Your albums", albums_path %></li>
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              <% else %>
+                <li><%= link_to "Sign up", signup_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Sign in", signin_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>

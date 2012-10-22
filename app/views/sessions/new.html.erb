@@ -1,0 +1,16 @@
+      <div class="row">
+        <h1>Sign in</h1>
+      </div>
+      <div class="row">
+        <div class="span6 offset3 well">
+          <%= form_for :session, url: sessions_path do |f| %>
+            <legend>Log in to Albumizr</legend>
+            <%= f.label :name, "Username" %>
+            <%= f.text_field :name, class: "input", placeholder: "cAse SENsiTivE" %>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "input" %>
+            <br>
+            <%= f.submit "Sign in", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>

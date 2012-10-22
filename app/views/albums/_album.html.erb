@@ -1,0 +1,9 @@
+<li class="span2">
+  <div class="thumbnail">
+    <p class="album-info">
+      <%= link_to image_tag(album.cover(:thumb)), album %>
+      <strong><%= album.artist %></strong><br>
+      <%= link_to album.title, album %> (<%= album.year %>)
+    </p>
+  </div>
+</li>

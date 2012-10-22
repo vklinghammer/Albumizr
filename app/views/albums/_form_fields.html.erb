@@ -1,0 +1,15 @@
+
+            <%= render 'shared/error_messages', object: f.object %>
+            <legend>Add an album to Albumizr</legend>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "input", placeholder: "Title" %>
+            <%= f.label :artist %>
+            <%= f.text_field :artist, class: "input", placeholder: "Artist" %>
+            <%= f.label :year %>
+            <%= f.text_field :year, class: "input", placeholder: "Year" %>
+            <%= f.label :cover %>
+            <%= f.file_field :cover %>
+            <%= f.hidden_field :user_id, { :value => current_user.id } %>
+            <span class="help-block"></span>
+            <br>
+            <%= f.submit "Save album", class: "btn btn-success" %>

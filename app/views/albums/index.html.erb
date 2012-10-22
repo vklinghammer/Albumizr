@@ -1,0 +1,17 @@
+<div class="row">
+  <% if params[:search].nil? %>
+    <h1>Your albums</h1>
+  <% else %>
+    <h1>Your search for "<%= params[:search] %>"</h1>
+  <% end %>
+  <%= link_to "Add album", new_album_path, class: "btn btn-small" %>
+</div>
+<div class="row">
+  <% if !@albums.empty? %>
+  <ul class="thumbnails">
+    <%= render @albums %>
+  </ul>
+  <% else %>
+    <p>Nothing found, sry. Why don't you <%= link_to "add a few albums", new_album_path %>?</p>
+  <% end %>
+</div>

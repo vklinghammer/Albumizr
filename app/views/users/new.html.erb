@@ -1,0 +1,22 @@
+      <div class="row">
+        <h1>Sign up</h1>
+      </div>
+      <div class="row">
+        <div class="span6 offset3 well">
+          <%= form_for @user do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <legend>Create an account for Albumizr</legend>
+            <%= f.label :name, "Username" %>
+            <%= f.text_field :name, class: "input", placeholder: "cAse SENsiTivE" %>
+            <span class="help-block">Choose a username with at least 2 and up to 42 characters</span>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "input" %>
+            <span class="help-block">Choose a password with at least 6 characters</span>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: "input" %>
+            <span class="help-block">Confirm the password</span>
+            <br>
+            <%= f.submit "Sign up", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
